@@ -1,12 +1,12 @@
 const getComputerChoice = () => {
   const choices = ["Rock", "Paper", "Scissors"];
   const choicePicker = Math.floor(Math.random() * choices.length);
-  return choices[choicePicker];
+  return choices[choicePicker].toLowerCase();
 }
 
 const playRound = (playerSelection, computerSelection) => {
-  playerSelection.toLowerCase();
-  computerSelection.toLowerCase();
+  playerSelection.toLowerCase()
+  computerSelection.toLowerCase()
 
   if (playerSelection === "rock" && computerSelection === "paper") {
     return `You Lose! Paper beats Rock`;
@@ -24,4 +24,11 @@ const playRound = (playerSelection, computerSelection) => {
     return `You are both tied`;
   }
 
+}
+
+const game = () => {
+  for(let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Rock, Paper, or Scissors?")
+    console.log(playRound(playerSelection, getComputerChoice()))
+  }
 }
